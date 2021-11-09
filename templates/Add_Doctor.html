@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+  <h3> {{action}} Doctors Form </h3>
+
+    {% if action=='Add' %}
+
+
+  <form action="/savebook" method="POST">
+
+        {% endif %}
+    {% if action=='Edit' %}
+
+
+
+        <form action="/updatedoctor" method="POST">
+
+    <div class="mb-3">
+    <label for="DoctorId" class="form-label">Doctor Id</label>
+    <input type="number" class="form-control" id="DoctorId" name="DoctorId" readonly value="{{Drs.D_id}}" >
+    </div>
+ {% endif %}
+  <div class="mb-3">
+    <div class="mb-3">
+    <label for="Doctor name" class="form-label">Doctor name</label>
+    <input type="text" class="form-control" id="Doctor name" name="Doctor name" value="{{Drs.D_name}}">
+    </div>
+      <div class="mb-3">
+    <div class="mb-3">
+    <label for="DoctorSc" class="form-label">Doctor Specialization</label>
+    <input type="text" class="form-control" id="DoctorSc" name="DoctorSc" value="{{Drs.D_specail}}">
+    </div>
+    <div class="mb-3">
+    <label for="Doctor duty" class="form-label">Doctor Duty</label>
+    <input type="number" class="form-control" id="Doctor duty" name="Doctor duty" value="{{Drs.D_duty}}">
+    </div>
+      <div class="mb-3">
+    <label for="Doctor Salary" class="form-label">Doctor Salary</label>
+    <input type="number" class="form-control" id="Doctor Salary" name="Doctor Salary" value="{{Drs.D_salary}}">
+    </div>
+
+
+
+</div>   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form></form>
+</div>
+
+{% endblock body %}

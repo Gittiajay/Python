@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+<h2 align="center">Doctors list</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Specialist</th>
+            <th>Duty</th>
+            <th>salary</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <thead>
+        {% for doc in Dr_list %}
+        <tr>
+            <td>{{doc.D_id}}</td>
+            <td>{{doc.D_name}}</td>
+            <td>{{doc.D_specail}}</td>
+            <td>{{doc.D_duty}}</td>
+            <td>{{doc.D_salary}}</td>
+
+            <td><a onclick="return confirm('Do you want to Delete?')" href="delete_dr/{{doc.D_id}}"
+                   class="btn btn-danger">Delete</a></td>
+            <td><a onclick="return confirm('Do you want to Edit Doctors?')" href="Edit_rd/{{doc.D_id}}"
+                   class="btn btn-success">Edit</a></td>
+        </tr>
+        {% endfor %}
+        </thead>
+
+    </table>
+</div>
+{% endblock body %}
